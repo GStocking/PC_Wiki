@@ -5,7 +5,7 @@ $(function () {
     var myNotification = {
         basePath: $('#basePath').val(),
         isLoading: false,//是否正在加载
-        isLoaded:false,//是够已经加载完成
+        isLoaded:false,//是否已经加载完成
         PageIndex:1,
         PageSize: 8,
         init: function () {
@@ -13,7 +13,6 @@ $(function () {
             this.bindEvent();
         },
         bindEvent: function () {
-
             var self= this,
                 scrollTimer;
             $(window).on('scroll', function () {
@@ -26,11 +25,6 @@ $(function () {
                         self.getNoticeList();
                     }
                 }, 20);
-            });
-
-            $('.page-content').on('click','i', function () {
-                $(this).toggleClass('toggle-unfold');
-                $(this).parent().next().slideToggle();
             });
         },
         getNoticeList: function () {
